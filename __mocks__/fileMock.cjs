@@ -1,0 +1,1 @@
+module.exports = ['fileMock']; // Este es un mock de un archivo, por lo que no importa el valor que se le asigne
