@@ -20,4 +20,25 @@
         align-items: center;
         gap: 20px;
     }
+
+    .counters {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+        .counter {
+            text-align: center;
+
+            .counter-title {
+                margin: 0;
+            }
+
+            .btns {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    }
 }
