@@ -1,16 +1,18 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import { TaskProviderWrapper } from './context/task.context.jsx'
 import { BrowserRouter } from 'react-router-dom'
+// import { TaskProviderWrapper } from './context/task.context.jsx'
+import { RecoilRoot } from 'recoil';
 
 createRoot(document.getElementById('root')).render(
-  // <StrictMode>
+
     <BrowserRouter>
-      <TaskProviderWrapper>
-        <App />
-      </TaskProviderWrapper>
+      {/* <TaskProviderWrapper> */} {/* Con React Context */}
+        <RecoilRoot> {/* Con Recoil */}
+          <App />
+        </RecoilRoot>
+      {/* </TaskProviderWrapper> */} {/* Con React Context */}
     </BrowserRouter>
-  // </StrictMode>,
+
 )

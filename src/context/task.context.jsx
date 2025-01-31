@@ -12,23 +12,43 @@ function TaskProviderWrapper(props) {
 
     const getTasks = async () => {
 
-        if (hasLoaded) return; // Si el contenido ya se ha cargado, que no se vuelva a cargar
+        // if (hasLoaded) return; // Si el contenido ya se ha cargado, que no se vuelva a cargar
 
-        try {
-            console.log("Get Tasks");
-            const response = await fetch(API_URL);
-            const data = await response.json();
-            if (Array.isArray(data)) { // Se asegura que "data" se ejecute aun que este vacio
-                setTasks(data);
-            } else {
-                console.error("Data is not an array", data);
-            }
-            setHasLoaded(true);
-            setError(false)
+        // try {
+        //     console.log("Get Tasks");
+        //     const response = await fetch(API_URL);
+        //     const data = await response.json();
+        //     if (Array.isArray(data)) { // Se asegura que "data" se ejecute aun que este vacio
+        //         setTasks(data);
+        //     } else {
+        //         console.error("Data is not an array", data);
+        //     }
+        //     setHasLoaded(true);
+        //     setError(false)
 
-        } catch (e) {
-            setError(true);
-        }
+        // } catch (e) {
+        //     setError(true);
+        // }
+
+        setHasLoaded(true);
+        setTasks([
+            {
+                id: "1",
+                title: "Comprar la cena",
+                completed: false
+            },
+            {
+                id: "2",
+                title: "Cocinar",
+                completed: false
+            },
+            {
+                id: "3",
+                title: "cenar",
+                completed: false
+            },
+
+        ]);
     };
 
     const addTask = async (newTask) => {
